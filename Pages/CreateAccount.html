@@ -47,33 +47,33 @@
                 <!------------------------------- Form --------------------------------->
                 <!---------------------------------------------------------------------->
 
-                <form action="" method="POST" class="u-clearfix u-form-spacing-14 u-inner-form" style="padding: 0px;"
-                  source="email" name="form">
+                <form method="POST" class="u-clearfix u-form-spacing-14 u-inner-form" style="padding: 0px;"
+                onsubmit="return validateForm()">
                   <div class="u-form-group u-form-name u-form-partition-factor-2 u-label-top u-form-group-1">
 
-                    <label for="name-934b" class="u-label">First Name</label>
-                    <input type="text" placeholder="Enter your First Name" id="name-934b" name="first_name"
+                    <label for="first_name" class="u-label">First Name</label>
+                    <input type="text" placeholder="Enter your First Name" id="first_name" name="first_name"
                       class="u-border-none u-grey-5 u-input u-input-rectangle u-radius-7 u-input-1" required=""
                       maxlength="20">
 
                   </div>
                   <div class="u-form-group u-form-name u-form-partition-factor-2 u-label-top u-form-group-2">
 
-                    <label for="name-934b" class="u-label">Last Name</label>
-                    <input type="text" placeholder="Enter your Last Name" id="name-934b" name="last_name"
+                    <label for="last_name" class="u-label">Last Name</label>
+                    <input type="text" placeholder="Enter your Last Name" id="last_name" name="last_name"
                       class="u-border-none u-grey-5 u-input u-input-rectangle u-radius-7 u-input-2" required=""
                       maxlength="20">
 
                   </div>
                   <div class="u-form-email u-form-group u-label-top">
-                    <label for="email-5a14" class="u-label" wfd-invisible="true">Email</label>
-                    <input type="email" placeholder="Enter a valid email address" id="email-5a14" name="email"
+                    <label for="email-1" class="u-label" wfd-invisible="true">Email</label>
+                    <input type="email" placeholder="Enter a valid email address" id="email-1" name="email"
                       class="u-border-none u-grey-5 u-input u-input-rectangle u-radius-7 u-input-3" required=""
                       maxlength="50">
                   </div>
                   <div class="u-form-group u-label-top u-form-group-4">
-                    <label for="text-63ef" class="u-label">Password</label>
-                    <input type="text" placeholder="Enter Your Password" id="text-63ef" name="password"
+                    <label for="password-1" class="u-label">Password</label>
+                    <input type="text" placeholder="Enter Your Password" id="password-1" name="password"
                       class="u-border-none u-grey-5 u-input u-input-rectangle u-radius-7 u-input-4" required="required"
                       maxlength="30">
                   </div>
@@ -102,10 +102,26 @@
     </div>
   </section>
 
+  <script src="Sign.js"></script>
+
+  <script>
 
 
+    window.onload = function() {
+            // قم بفحص وجود العلامة في localStorage
+            var isRegistered = localStorage.getItem('isRegistered');
+        
+            // إذا كان المستخدم قد سجل الدخول بنجاح، قم بمنعه من الوصول لصفحة التسجيل مرة أخرى
+            if (isRegistered === 'true') {
+                alert("لقد قمت بالفعل بالتسجيل!");
+                // يمكنك أيضًا توجيه المستخدم إلى صفحة أخرى أو فعل أي شيء آخر هنا
+                window.location.href = "../index.html";
+            }
+        }
+    
+    </script>
 
-
+  
 </body>
 
 </html>

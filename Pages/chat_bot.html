@@ -104,6 +104,33 @@
   <script src="../JS/script.js"></script>
 
 
+  <script>
+
+
+    window.onload = function() {
+            // قم بفحص وجود العلامة في localStorage
+            var isRegistered = localStorage.getItem('isRegistered');
+        
+            // إذا كان المستخدم قد سجل الدخول بنجاح، قم بمنعه من الوصول لصفحة التسجيل مرة أخرى
+            if (isRegistered === 'false') {
+                // إذا لم يكن المستخدم قد سجل، قم بتحويله إلى صفحة التسجيل
+                alert("يجب عليك التسجيل أولاً!");
+                window.location.href = "Login.html";
+            }
+        }
+    
+    
+        function logout() {
+            // حذف العلامة المستخدمة لتسجيل الدخول من localStorage
+            localStorage.removeItem('isRegistered');
+        
+            // توجيه المستخدم إلى صفحة تسجيل الدخول
+            window.location.href = "Login.html";
+        }
+    
+    </script>
+
+
 </body>
 
 </html>

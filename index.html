@@ -79,6 +79,10 @@
                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
                 href="Pages/About-Us.html" style="padding: 10px 36px;">About Us</a>
             </li>
+            <li class="u-nav-item"><a
+              class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+              href="#" onclick="logout()" style="padding: 10px 36px;">Logout</a>
+          </li>
           </ul>
         </div>
         <div class="u-custom-menu u-nav-container-collapse">
@@ -94,6 +98,8 @@
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Pages/Contact-Us.html">Contact Us</a>
                 </li>
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Pages/About-Us.html">About Us</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#" onclick="logout()">Logout</a>
                 </li>
               </ul>
             </div>
@@ -346,6 +352,34 @@
       <path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path>
     </svg>
   </span>
+
+
+<script>
+
+
+window.onload = function() {
+        // قم بفحص وجود العلامة في localStorage
+        var isRegistered = localStorage.getItem('isRegistered');
+    
+        // إذا كان المستخدم قد سجل الدخول بنجاح، قم بمنعه من الوصول لصفحة التسجيل مرة أخرى
+        if (isRegistered === 'false') {
+            // إذا لم يكن المستخدم قد سجل، قم بتحويله إلى صفحة التسجيل
+            alert("يجب عليك التسجيل أولاً!");
+            window.location.href = "Pages/Login.html";
+        }
+    }
+
+
+    function logout() {
+        // حذف العلامة المستخدمة لتسجيل الدخول من localStorage
+        localStorage.removeItem('isRegistered');
+    
+        // توجيه المستخدم إلى صفحة تسجيل الدخول
+        window.location.href = "Pages/Login.html";
+    }
+
+</script>
+
 
 </body>
 
