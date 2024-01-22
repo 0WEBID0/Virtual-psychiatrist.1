@@ -112,7 +112,7 @@
             var isRegistered = localStorage.getItem('isRegistered');
         
             // إذا كان المستخدم قد سجل الدخول بنجاح، قم بمنعه من الوصول لصفحة التسجيل مرة أخرى
-            if (isRegistered === 'false') {
+            if (isRegistered !== 'true') {
                 // إذا لم يكن المستخدم قد سجل، قم بتحويله إلى صفحة التسجيل
                 alert("يجب عليك التسجيل أولاً!");
                 window.location.href = "Login.html";
